@@ -22,9 +22,10 @@
                 required>
             <mat-error *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">Password Must Not be Blank</mat-error>  
         </mat-form-field> 
-        <button type="submit" 
+        <button *ngIf="!(isLaoding$ | async)" type="submit" 
             mat-raised-button
             color="primary"
-            [disabled]="!loginForm.valid">Submit</button> 
+            [disabled]="!loginForm.valid">Submit</button>
+        <mat-spinner *ngIf="(isLaoding$ | async)"></mat-spinner>
     </form>
 </section>
