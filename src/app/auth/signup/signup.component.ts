@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { UIService } from 'src/app/shared/ui.service';
-import { Subscription, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import * as fromRoot from '../../app.reducer';
 import { Store } from '@ngrx/store';
 
@@ -12,7 +12,6 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  loadingSubs: Subscription;
   maxDate;
   minDate;
   isLoading$: Observable<boolean>;
